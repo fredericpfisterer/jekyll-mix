@@ -1,0 +1,24 @@
+{
+  "name": "mix-jekyll",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js & jekyll build --watch",
+    "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js && jekyll build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "browser-sync-webpack-plugin": "^1.2.0",
+    "laravel-mix": "^2.0.0",
+    "postcss": "^6.0.16",
+    "postcss-cssnext": "^3.1.0"
+  },
+  "dependencies": {
+    "awesome-sass-easing": "^1.1.2",
+    "include-media": "^1.4.9"
+  }
+}

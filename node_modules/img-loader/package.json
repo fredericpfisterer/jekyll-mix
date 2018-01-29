@@ -1,0 +1,44 @@
+{
+  "name": "img-loader",
+  "version": "2.0.0",
+  "description": "Image minimizing loader for webpack",
+  "keywords": [
+    "image",
+    "imagemin",
+    "image-loader",
+    "optimize",
+    "minify",
+    "webpack",
+    "webpack-loader"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/thetalecrafter/img-loader.git"
+  },
+  "author": {
+    "name": "Andy VanWagoner",
+    "email": "thetalecrafter@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thetalecrafter/img-loader/issues"
+  },
+  "homepage": "https://github.com/thetalecrafter/img-loader",
+  "dependencies": {
+    "imagemin": "^5.2.0",
+    "imagemin-gifsicle": "^5.1.0",
+    "imagemin-mozjpeg": "^6.0.0",
+    "imagemin-optipng": "^5.2.0",
+    "imagemin-pngquant": "^5.0.0",
+    "imagemin-svgo": "^5.2.0",
+    "loader-utils": "^1.0.4"
+  },
+  "devDependencies": {
+    "mocha": "^3.0.0",
+    "standard": "^9.0.0"
+  },
+  "scripts": {
+    "pretest": "standard",
+    "test": "mocha __tests__/*.spec.js"
+  }
+}
