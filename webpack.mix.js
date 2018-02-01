@@ -1,4 +1,6 @@
 let mix = require('laravel-mix');
+const fs = require('fs-extra')
+
 
 /*
  |--------------------------------------------------------------------------
@@ -22,13 +24,17 @@ mix.setPublicPath('assets')
         },
         files: ['_site/**/*.html', '_site/**/*.js', '_site/**/*.css']
     })
-    .disableNotifications();
+    .disableNotifications()
+    .then(function() {
+         fs.copy('assets/mix-manifest.json', '_data/mix-manifest.json')
+         .then(() => console.log('mix-manifest.json copied to _data'))
+    })
 
 if (mix.inProduction()) {
-    mix.version();
+    mix.version()
 }
 else{
-    mix.sourceMaps();
+    mix.sourceMaps()
 }
 
 

@@ -13,12 +13,12 @@
   "devDependencies": {
     "browser-sync": "^2.23.6",
     "browser-sync-webpack-plugin": "^1.2.0",
+    "fs-extra": "^5.0.0",
     "laravel-mix": "^2.0.0",
     "postcss": "^6.0.16",
     "postcss-cssnext": "^3.1.0"
   },
   "dependencies": {
-    "awesome-sass-easing": "^1.1.2",
     "include-media": "^1.4.9"
   }
 }

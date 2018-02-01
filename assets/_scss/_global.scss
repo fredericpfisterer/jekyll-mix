@@ -1,12 +1,21 @@
 body{
-    margin: 0;
+    font-family: $body-font;
     color: $dark-blue;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
     font-family: $body-font;
 }
+
 a{
-    color: inherit;
     text-decoration: none;
-    &:hover{
-        text-decoration: underline;
+    color: $orange;
+    &:hover, &:focus{
+        color: $dark-blue;
     }
 }

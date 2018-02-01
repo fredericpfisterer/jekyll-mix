@@ -7,13 +7,17 @@
 * BrowserSync
 * Sass
 * PostCSS Autoprefixer
-* Minification
+* Sourcemaps in Dev
+* Minification in Production
+* Versionning in Production
+* Include Media (http://include-media.com)
 
 ## Requirements
 
 * node
 * Jekyll
 * npm or Yarn
+* shipit (https://github.com/shipitjs/shipit)
 
 ## Installation
 
@@ -31,3 +35,10 @@ Make sure to edit files in assets/_js and assets/_scss
 
 ```yarn production```
 
+## Deployment
+
+Edit shipitfile.js
+
+then :
+
+```shipit staging deploy```
