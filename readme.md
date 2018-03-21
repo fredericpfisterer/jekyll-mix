@@ -23,10 +23,6 @@
 
 ```yarn```
 
-## Usage
-
-Make sure to edit files in assets/_js and assets/_scss
-
 ### Development
 
 ```yarn watch```
