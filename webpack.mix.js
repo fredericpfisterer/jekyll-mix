@@ -26,7 +26,7 @@ mix.setPublicPath('assets')
     })
     .disableNotifications()
     .then(function() {
-         fs.move('_resources/mix-manifest.json', '_data/mix-manifest.json', {overwrite: true})
+         fs.move('assets/mix-manifest.json', '_data/mix-manifest.json', {overwrite: true})
          .then(() => console.log('mix-manifest.json copied to _data'))
     })
 
