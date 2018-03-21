@@ -14,8 +14,8 @@ const fs = require('fs-extra')
  */
 
 mix.setPublicPath('assets')
-    .js('assets/_js/app.js', 'js/')
-    .sass('assets/_scss/app.scss', 'css/')
+    .js('_resources/js/app.js', 'js/')
+    .sass('_resources/scss/app.scss', 'css/')
     .browserSync({
         browser: 'Google Chrome',
         proxy: false,
@@ -26,7 +26,7 @@ mix.setPublicPath('assets')
     })
     .disableNotifications()
     .then(function() {
-         fs.copy('assets/mix-manifest.json', '_data/mix-manifest.json')
+         fs.move('_resources/mix-manifest.json', '_data/mix-manifest.json', {overwrite: true})
          .then(() => console.log('mix-manifest.json copied to _data'))
     })
 
