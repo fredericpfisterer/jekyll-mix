@@ -1,5 +1,5 @@
 _site
 .sass-cache
 .jekyll-metadata
-node_nodules/
+node_modules/
 yarn-error.log
