@@ -34,6 +34,9 @@ if (mix.inProduction()) {
     mix.version()
 }
 else{
+    mix.webpackConfig({
+        devtool: 'source-map'
+    })
     mix.sourceMaps()
 }
 
