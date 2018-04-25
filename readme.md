@@ -3,7 +3,7 @@
 **A Jekyll Boilerplate With Laravel Mix**
 
 ## Features
-* ES2017 + modules compilation
+* ES2017 + modules compilation (Webpack + Babel)
 * BrowserSync
 * Sass
 * PostCSS Autoprefixer
