@@ -1,6 +1,7 @@
-let mix = require('laravel-mix');
-const fs = require('fs-extra')
-
+let mix = require("laravel-mix")
+const fs = require("fs-extra")
+const yaml = require("js-yaml")
+const child_process = require('child_process')
 
 /*
  |--------------------------------------------------------------------------
@@ -13,33 +14,36 @@ const fs = require('fs-extra')
  |
  */
 
-mix.setPublicPath('assets')
-    .js('_resources/js/app.js', 'js/')
-    .sass('_resources/scss/app.scss', 'css/')
-    .browserSync({
-        browser: 'Google Chrome',
-        proxy: false,
-        server: {
-            baseDir: "_Site/",
-        },
-        files: ['_site/**/*.html', '_site/**/*.js', '_site/**/*.css']
-    })
-    .disableNotifications()
-    .then(function() {
-         fs.move('assets/mix-manifest.json', '_data/mix-manifest.json', {overwrite: true})
-         .then(() => console.log('mix-manifest.json copied to _data'))
-    })
+mix
+  .setPublicPath("assets")
+  .js("_resources/js/app.js", "js/")
+  .sass("_resources/scss/app.scss", "css/")
+  .browserSync({
+    browser: "Firefox Developer Edition",
+    proxy: false,
+    server: {
+      baseDir: "_Site/"
+    },
+    files: ["_pages/**/*.html", "_site/**/*.js", "_site/**/*.css"]
+  })
+  .disableNotifications()
+  .then(function() {
+    const manifest = fs.readJsonSync("assets/mix-manifest.json")
+    let config = yaml.safeLoad(fs.readFileSync('./_config.yml', 'utf8'));
+    config.defaults.css = manifest['/css/app.css'];
+    config.defaults.js = manifest['/js/app.js'];
+    fs.writeFileSync('./_config.yml', yaml.safeDump(config))
+    child_process.execSync('bundle exec jekyll build')
+  })
 
 if (mix.inProduction()) {
-    mix.version()
+  mix.version()
+} else {
+  mix.webpackConfig({
+    devtool: "source-map"
+  })
+  mix.sourceMaps()
 }
-else{
-    mix.webpackConfig({
-        devtool: 'source-map'
-    })
-    mix.sourceMaps()
-}
-
 
 // Full API
 // mix.js(src, output);

@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js & jekyll build --watch",
-    "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js && jekyll build"
+    "watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "keywords": [],
   "author": "",
@@ -13,10 +13,16 @@
   "devDependencies": {
     "browser-sync": "^2.23.6",
     "browser-sync-webpack-plugin": "^2.2.2",
-    "fs-extra": "^5.0.0",
-    "laravel-mix": "^2.1.11",
-    "postcss": "^6.0.20",
-    "postcss-cssnext": "^3.1.0"
+    "fs-extra": "^7.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "js-yaml": "^3.11.0",
+    "laravel-mix": "^4.0.15",
+    "postcss": "^7.0.14",
+    "postcss-cssnext": "^3.1.0",
+    "resolve-url-loader": "2.3.1",
+    "sass": "^1.17.4",
+    "sass-loader": "7.*",
+    "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
     "include-media": "^1.4.9"
