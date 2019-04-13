@@ -1,7 +1,7 @@
 let mix = require('laravel-mix')
 const fs = require('fs-extra')
 const yaml = require('js-yaml')
-const child_process = require('child_process')
+const childProcess = require('child_process')
 
 /*
  |--------------------------------------------------------------------------
@@ -33,7 +33,7 @@ mix
     config.defaults.css = manifest['/css/app.css']
     config.defaults.js = manifest['/js/app.js']
     fs.writeFileSync('./_config.yml', yaml.safeDump(config))
-    child_process.execSync('bundle exec jekyll build')
+    childProcess.execSync('bundle exec jekyll build')
   })
 
 if (mix.inProduction()) {
