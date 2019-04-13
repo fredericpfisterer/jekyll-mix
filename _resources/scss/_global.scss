@@ -1,6 +1,6 @@
-body{
-    font-family: $body-font;
-    color: $dark-blue;
+body {
+  font-family: $body-font;
+  color: $dark-blue;
 }
 
 h1,
@@ -8,14 +8,15 @@ h2,
 h3,
 h4,
 h5,
-h6{
-    font-family: $body-font;
+h6 {
+  font-family: $body-font;
 }
 
-a{
-    text-decoration: none;
-    color: $orange;
-    &:hover, &:focus{
-        color: $dark-blue;
-    }
+a {
+  text-decoration: none;
+  color: $orange;
+  &:hover,
+  &:focus {
+    color: $dark-blue;
+  }
 }

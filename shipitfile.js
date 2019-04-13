@@ -3,21 +3,26 @@ module.exports = function (shipit) {
     staging: {
       servers: 'serverpilot@leslash.com'
     }
-  });
+  })
 
   shipit.blTask('build', function () {
-    return shipit.local('yarn production');
-  });
+    return shipit.local('yarn production')
+  })
 
   shipit.blTask('clean', function () {
-    return shipit.remote('rm -rf /srv/users/serverpilot/apps/jekyll-mix/public/*');
-  });
+    return shipit.remote(
+      'rm -rf /srv/users/serverpilot/apps/jekyll-mix/public/*'
+    )
+  })
 
   shipit.task('copy', function () {
-    shipit.remoteCopy('./_site/', '/srv/users/serverpilot/apps/jekyll-mix/public');
-  });
+    shipit.remoteCopy(
+      './_site/',
+      '/srv/users/serverpilot/apps/jekyll-mix/public'
+    )
+  })
 
   shipit.task('deploy', function () {
     shipit.start('build', 'clean', 'copy')
-  });
-};
+  })
+}
