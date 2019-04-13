@@ -19,7 +19,7 @@ mix
   .js("_resources/js/app.js", "js/")
   .sass("_resources/scss/app.scss", "css/")
   .browserSync({
-    browser: "Firefox Developer Edition",
+    open: false,
     proxy: false,
     server: {
       baseDir: "_Site/"
